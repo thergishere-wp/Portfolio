@@ -101,3 +101,34 @@
     }, { threshold: 0.1 });
     revealables.forEach(el => obs.observe(el));
   })();
+  /* ===== Mobile media helpers ===== */
+(function(){
+    // 1) Pause videos when off-screen (saves battery on phones)
+    const vids = Array.from(document.querySelectorAll('video'));
+    if (vids.length){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          const v = e.target;
+          if (!e.isIntersecting && !v.paused) v.pause();
+        });
+      }, {threshold: 0.1});
+      vids.forEach(v=> io.observe(v));
+    }
+  
+    // 2) If a video fails, hide it (keep the poster image next to it)
+    vids.forEach(v=>{
+      v.addEventListener('error', ()=>{ v.style.display = 'none'; });
+    });
+  
+    // 3) Lazy-load images for mobile perf (if not already set in HTML)
+    document.querySelectorAll('img:not([loading])')
+      .forEach(img => img.setAttribute('loading','lazy'));
+  
+    // 4) Improve keyboard UX: scroll input into view on focus (mobile)
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(el=>{
+      el.addEventListener('focus', ()=>{
+        setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'center'}), 100);
+      });
+    });
+  })();

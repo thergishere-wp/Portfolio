@@ -410,3 +410,105 @@ section.reveal-in { opacity:1; transform:none; }
   background:#2563eb; opacity:.35;
   margin:.5rem 0 0; border-radius:2px;
 }
+/* ===== Mobile polish pack ===== */
+
+/* Slightly reduce overall section padding on small screens */
+@media (max-width: 720px){
+  section{ padding: 48px 0 }
+}
+
+/* Scale down big headings so they don't wrap awkwardly */
+@media (max-width: 720px){
+  #hero h1{ font-size: 1.6rem; line-height: 1.2 }
+  #hero h2{ font-size: 1rem }
+  #about h2, #skills h2, #projects h2, #contact h2{ font-size: 1.5rem }
+}
+
+/* Make hero buttons easier to tap on small screens */
+@media (max-width: 560px){
+  .hero-buttons .btn,
+  .hero-buttons .btn-alt{
+    padding: .7rem 1rem;
+  }
+  .hero-buttons{ flex-wrap: wrap; gap: .6rem }
+}
+
+/* Chips: allow multi-line entries & better wrapping */
+.proof-chips li{
+  white-space: normal;        /* allow wrap on small screens */
+  line-height: 1.25;
+}
+@media (max-width: 560px){
+  .proof-chips{ gap: .45rem }
+}
+
+/* Videos/images: enforce responsive 16:9 and full width */
+.project-media video{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+.project-media img{ width: 100%; height: auto }
+
+/* Chat: keep input/button row tidy on narrow phones */
+@media (max-width: 560px){
+  .chat-input{ grid-template-columns: 1fr }
+  .chat-actions{ justify-content: stretch }
+  .chat-btn{ flex: 1 }
+  .messages{ max-height: 220px }
+}
+
+/* Nav: prevent cramping by letting links wrap nicely */
+@media (max-width: 560px){
+  .nav-inner{ gap: .5rem }
+  .nav-links{ flex-wrap: wrap; gap: .5rem }
+}
+/* ===== Mobile tune-up for Projects, Contact, Footer ===== */
+
+/* Projects: make video/poster full-width 16:9 on all phones */
+.project-media video,
+.project-media img{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:12px;
+  background:#000;
+  box-shadow:0 8px 24px rgba(2,6,23,.08);
+}
+
+/* Project cards: lighter padding on mobile, subtle card look */
+.project-list li{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:.75rem .9rem;
+  box-shadow:0 4px 14px rgba(2,6,23,.05);
+}
+
+/* Contact: stronger separation + better spacing */
+#contact{
+  position:relative;
+  background:linear-gradient(180deg,#f8fafc 0%, #f6f7fb 100%);
+}
+#contact::before{
+  content:""; position:absolute; left:0; right:0; top:0; height:1px;
+  background:linear-gradient(90deg,transparent,#e5e7eb,transparent);
+}
+.contact-grid{ gap:1.4rem; }
+.chat-card.glass{ min-height:300px; }
+@media (max-width:560px){
+  .chat-card.glass{ min-height:260px; }
+}
+
+/* Footer: pull it closer on small screens so the page doesn't feel empty */
+@media (max-width:560px){
+  footer{ margin-top:24px; }
+}
+
+/* Headings spacing on mobile so sections don't feel bulky */
+@media (max-width:560px){
+  #projects h2, #contact h2{ margin-bottom:.35rem; }
+  .projects-inner>p, .contact-subtitle{ margin-bottom:.6rem; }
+}
