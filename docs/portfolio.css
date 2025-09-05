@@ -512,3 +512,28 @@ section.reveal-in { opacity:1; transform:none; }
   #projects h2, #contact h2{ margin-bottom:.35rem; }
   .projects-inner>p, .contact-subtitle{ margin-bottom:.6rem; }
 }
+/* Proof chips grid */
+.proof-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .6rem;
+  margin-top: 1rem;
+}
+.proof-chips li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem .8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(2,6,23,.06);
+  font-size: .95rem;
+  font-weight: 500;
+}
+.proof-chips li img,
+.proof-chips li svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
