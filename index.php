@@ -33,13 +33,20 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="hero-text">
-            <h1>Pasindu Mahen Walkuluarachchi</h1>
-            <h2>IT Student • Web Designer • Video Editor</h2>
-            <p>"Passionate about technology, building gaming PCs, and crafting clean designs & engaging edits."</p>
+            <h1>IT Student & Freelance Video Editor</h1>
+            <h2>Turning tech obsession into clean code and engaging edits</h2>
+            <p>From building gaming PCs to editing wedding films and crafting responsive websites — I bring technical precision and creative energy into everything I do.</p>
             <div class="hero-buttons">
               <a href="#projects" class="btn">View Projects</a>
               <a href="#contact" class="btn btn-alt">Contact Me</a>
             </div>
+            <ul class="proof-chips">
+              <li>🎬 3+ years freelance video editing (YouTube & weddings)</li>
+              <li>💻 Built 5+ websites & systems (projects & assignments)</li>
+              <li>🎮 Gaming PC builder & tech enthusiast</li>
+              <li>📷 Leader of University Photography Club</li>
+              <li>🚁 Experience with DJI drone piloting</li>
+            </ul>
           </div>
           <div class="hero-image">
             <img src="<?= $base ?>/assets/images/profile.jpg" alt="Pasindu Mahen — professional profile" width="320">
@@ -53,11 +60,14 @@
       <img src="<?= $base ?>/assets/images/profile2.jpg" alt="Pasindu Mahen at workstation" width="320">
     </div>
     <div class="about-text">
-      <p>Hello, I'm Pasindu Mahen Walkuluarachchi — a 3rd year IT undergraduate at Siam University. I love building sleek, accessible web experiences and editing engaging videos. I'm happiest around computers, from crafting clean UI to assembling gaming PCs.</p>
+      <p>I’m a 3rd year IT undergraduate at Siam University, passionate about web development and software engineering. Beyond my studies, I’ve worked as a freelance video editor for over 3 years, specializing in editing, color grading, and final delivery. I enjoy blending my technical side with creativity, from building gaming PCs to producing engaging edits.</p>
       <ul class="quick-facts">
         <li><strong>Based:</strong> Bangkok, Thailand</li>
-        <li><strong>Interests:</strong> Web design, PC building, video editing</li>
-        <li><strong>Tools:</strong> HTML, CSS, JS, Python, Adobe Premiere Pro</li>
+        <li><strong>Focus:</strong> Web development & software engineering</li>
+        <li><strong>Experience:</strong> 3+ years freelance video editing</li>
+        <li><strong>Projects:</strong> Hospital management system (C#), luxury car dealership site, digital games store, portfolio websites</li>
+        <li><strong>Leadership:</strong> University Photography Club leader</li>
+        <li><strong>Tech Hobbies:</strong> Gaming PC builder, DJI drone pilot</li>
       </ul>
       <p><a class="btn btn-alt" href="<?= $base ?>/assets/Pasindu-CV.pdf" download>View Full CV</a></p>
     </div>
@@ -146,7 +156,7 @@
       </div>
       <!-- Chat input area -->
       <div class="chat-input">
-        <input type="text" placeholder="Type your message..." disabled>
+        <input type="text" placeholder="Type your message...">
         <div class="chat-actions">
           <button class="chat-btn discord">Discord</button>
           <button class="chat-btn whatsapp">WhatsApp</button>

@@ -251,3 +251,162 @@ footer{margin-top:40px;background:#f1f5f9;border-top:1px solid #e5e7eb}
 @media (max-width: 900px){
   .chat-card.glass { min-height: 300px; }
 }
+/* chat message bubbles */
+.chat-window { overflow: hidden; }
+.messages { max-height: 320px; overflow:auto; padding: .5rem; width:100%; }
+.bubble { display:inline-block; padding:.55rem .75rem; border-radius:12px; margin:.25rem 0; max-width:85%; line-height:1.35 }
+.bubble.me { background:#2563eb; color:#fff; margin-left:auto; display:block; }
+.bubble.them { background:rgba(255,255,255,.85); color:#0f172a; border:1px solid #e5e7eb; display:block; }
+
+/* active nav link */
+.nav-links a.active { color:#2563eb; background:#eef2ff; }
+
+/* link underline polish */
+.nav-links a { position:relative; }
+.nav-links a::after{
+  content:""; position:absolute; left:.6rem; right:.6rem; bottom:.2rem;
+  height:2px; background:#2563eb; transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+
+/* section reveal */
+section { opacity:0; transform:translateY(12px); transition:opacity .45s ease, transform .45s ease; }
+section.reveal-in { opacity:1; transform:none; }
+
+/* chat input row spacing on very small screens */
+@media (max-width:560px){
+  .messages{max-height:240px}
+}
+/* ===== Chat header restyle (remove plain white look) ===== */
+.chat-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .6rem .85rem;
+  background: rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 12px;
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(2,6,23,.06);
+  margin-bottom: .9rem;
+}
+.chat-card__header span {
+  font-weight: 700;
+}
+.chat-card__note {
+  color: #64748b;
+}
+
+/* ===== Stronger glass card + spacing ===== */
+.contact-grid {
+  gap: 2rem;
+}
+.contact-right {
+  padding-left: .25rem;
+}
+.contact-right .chat-card.glass {
+  box-shadow: 0 20px 60px rgba(2,6,23,.12),
+              inset 0 1px 0 rgba(255,255,255,.2);
+  border: 1px solid rgba(15,23,42,.06);
+}
+
+/* ===== Section separation so contact area doesn't blend ===== */
+#contact {
+  position: relative;
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+}
+
+/* ===== Bubble sizing tweak ===== */
+.bubble {
+  max-width: 70%;
+}
+.bubble.me {
+  border-top-right-radius: 6px;
+}
+.bubble.them {
+  border-top-left-radius: 6px;
+}
+
+/* ===== Chat window contrast a bit higher ===== */
+.chat-window {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(15,23,42,.08);
+}
+/* Proof chips under hero */
+.proof-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem .6rem;
+  margin-top:1rem;
+}
+.proof-chips li{
+  padding:.4rem .65rem;
+  border:1px solid #e5e7eb;
+  border-radius:9999px;            /* pill */
+  background:#ffffff;
+  color:#334155;
+  font-size:.92rem;
+  line-height:1;
+  box-shadow:0 6px 18px rgba(2,6,23,.06);
+  white-space:nowrap;
+}
+
+/* Slight hero spacing tune so chips don’t feel cramped */
+#hero .hero-buttons{margin-top:.25rem}
+#hero .proof-chips{margin-top:.85rem}
+
+/* Responsive: keep chips readable on small screens */
+@media (max-width:560px){
+  .proof-chips li{font-size:.9rem}
+}/* --- Compact floating chat header tab --- */
+.chat-card.glass{
+  padding: 1.1rem 1.1rem 1.25rem; /* a touch tighter */
+}
+.chat-card__header{
+  width: fit-content;
+  margin: 0 auto 1rem;            /* center the tab above the chat box */
+  padding: .4rem .7rem;            /* smaller, pill-like */
+  border-radius: 9999px;
+  background: rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  box-shadow: 0 8px 22px rgba(2,6,23,.08);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.chat-card__header span{
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .2px;
+}
+/* hide the small note if you still have it */
+.chat-card__note{ display: none }
+
+/* reinforce separation between chat card and the rest a bit */
+.contact-right{ padding-left: .4rem }
+.chat-window{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(15,23,42,.10);
+}
+
+/* --- Hero subline accent (minimal underline bar) --- */
+#hero h2{ position: relative }
+#hero h2::after{
+  content:"";
+  display:block;
+  width:68px; height:2px;
+  background:#2563eb; opacity:.35;
+  margin:.5rem 0 0; border-radius:2px;
+}
