@@ -24,7 +24,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <a class="btn-cv" href="<?= $base ?>/assets/Pasindu-CV.pdf" download>Download CV</a>
+                <a class="btn-cv" href="<?= $base ?>/assets/Pasindu-Mahen-CV.pdf" download rel="noopener">Download CV</a>
             </div>
         </nav>
     </header>
@@ -69,7 +69,7 @@
         <li><strong>Leadership:</strong> University Photography Club leader</li>
         <li><strong>Tech Hobbies:</strong> Gaming PC builder, DJI drone pilot</li>
       </ul>
-      <p><a class="btn btn-alt" href="<?= $base ?>/assets/Pasindu-CV.pdf" download>View Full CV</a></p>
+      <p><a class="btn btn-alt" href="<?= $base ?>/assets/Pasindu-Mahen-CV.pdf" download rel="noopener">View Full CV</a></p>
     </div>
   </div>
 </section>
